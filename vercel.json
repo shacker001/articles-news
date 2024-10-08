@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "articles/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "articles/wsgi.py"
+      }
+    ],
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "articles.settings",
+      "SECRET_KEY": "@your-secret-key",
+      "ALLOWED_HOSTS": ".vercel.app",
+      "DEBUG": "false"
+    }
+  }
+  

@@ -1,0 +1,377 @@
+/* Base Styles */
+body {
+    font-family: 'Century Schoolbook', serif; /* Preferred font type */
+    background-color: #F5F5DC; /* Cream background */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Dark Brown text */
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: #8B4513; /*Dark brown for links */
+}
+
+a:hover{
+    color: #b422b4;
+}
+
+header {
+    background-color: #8B4513;
+    /* Dark Brown header */
+    /* color: white; */
+    padding: 20px;
+    text-align: center;
+}
+
+.chronicles-header{
+    text-align: center;
+    padding: 40px 0;
+    background-color: black;
+    /* background-color: #F9E87B; */
+    color: #8B4513;
+}
+.chronicles-header img {
+    width: 500px;
+    height: auto;
+}
+
+.chronicles-header p {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: bold;
+    color: #8B4513; /* Dark brown for tagline */
+}
+
+.chronicles-header h2 {
+    font-size: 3em;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #8B4513; /* Dark brown for the subtitle */
+}
+
+h1,h2,h3 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    /* Main heading */
+}
+
+h2 {
+    font-size: 2em;
+    /* Subheading */
+}
+
+h3 {
+    font-size: 1.5em;
+    /* Smaller subheading */
+}
+
+
+nav {
+    background-color: #8B4513;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: relative;
+    width: 100%;
+    height: 90px;
+    color: #FFF;
+}
+
+nav .logo img {
+    height: 60px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li {
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+nav ul li a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #F9E87B;
+    text-decoration: none;
+}
+
+
+nav ul li a:hover {
+    /* text-decoration: underline; */
+    color:#FFF;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Article Styles */
+.article {
+    border: 1px solid #8B4513;
+    /* Darker Brown border */
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: white;
+    /* White background for articles */
+}
+
+.article h2 {
+    color: #8B4513;
+    /* Dark Brown for article title */
+}
+
+.article p {
+    margin: 10px 0;
+}
+
+.article a {
+    color: #F9E87B;
+    /* Bright Mustard yellow for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.article a:hover {
+    text-decoration: underline;
+}
+
+
+.article-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+.article-card {
+    background-color: #FFF;
+    border: 2px solid #8B4513;
+    padding: 20px;
+    width: calc(25% - 40px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.article-card h2 {
+    font-size: 1.8em;
+    color: #8B4513;
+}
+
+.article-card p {
+    color: #333;
+    font-size: 1em;
+    margin: 15px 0;
+}
+
+.article-card .article-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.article-card .read-more {
+    background-color: #8B4513;
+    color: #F9E87B;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.article-card .read-more:hover {
+    background-color: #8B4513;
+    color: #FFF;
+}
+
+
+/* Form Styles */
+form {
+    background-color: #F9E87B;
+    /* Bright Mustard yellow background for forms */
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input,form textarea,form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #f0883e;
+    /* Darker Brown border */
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #8B4513;
+    /* Dark Brown button */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #F9E87B;
+    /* Bright Mustard yellow on hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #8B4513;
+    color: #F9E87B;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p{
+    margin: 0;
+}
+
+/* MEDIA QUERIES */
+
+/* Medium screens (Tablets and small desktops) */
+@media screen and (max-width: 1024px) {
+    .card {
+        width: 45%; /* Cards adjust size */
+    }
+
+    header {
+        font-size: 2em;
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 1.1em;
+        margin: 0 10px;
+    }
+
+    section {
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    section h3 {
+        font-size: 1.8em;
+    }
+
+    section p {
+        font-size: 1em;
+    }
+}
+
+/* Small screens (Mobile devices) */
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%; /* Cards take full width */
+        margin: 10px 0;
+    }
+
+    header {
+        font-size: 1.8em;
+        padding: 10px;
+    }
+
+    nav a {
+        display: block;
+        font-size: 1.2em;
+        padding: 10px 0;
+        margin: 5px 0;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    section h3 {
+        font-size: 1.5em;
+    }
+
+    section p {
+        font-size: 0.9em;
+    }
+
+    form button {
+        font-size: 1.1em;
+    }
+
+    footer {
+        font-size: 0.8em;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .article-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .article-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article-card {
+        width: 90%;
+    }
+
+    .chronicles-header img {
+        width: 200px; /* Adjust logo size for smaller screens */
+    }
+}

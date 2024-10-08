@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="chronicles-header">
+    <img src="static/images/logo.jpg" alt="Chronicles">
+    <p>~ Your Story, Our Chronicles ~</p>
+    <h2>SUBMIT, SHARE, INSPIRE</h2>
+</div>
+<div class="article-list">
+    {% for article in articles %}
+        <div class="article-card">
+            <!-- Display the article image if it exists -->
+            {% if article.image %}
+            <div class="article-image">
+                <img src="{{ article.image.url }}" alt="{{ article.title }}">
+            </div>
+            {% endif %}
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.short_content }}</p> <!-- Truncated article content -->
+            <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
