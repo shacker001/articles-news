@@ -1,24 +1,48 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-<div class="chronicles-header">
-    <img src="static/images/logo.jpg" alt="Chronicles">
-    <p>~ Your Story, Our Chronicles ~</p>
-    <h2>SUBMIT, SHARE, INSPIRE</h2>
-</div>
-<div class="article-list">
-    {% for article in articles %}
-        <div class="article-card">
-            <!-- Display the article image if it exists -->
-            {% if article.image %}
-            <div class="article-image">
-                <img src="{{ article.image.url }}" alt="{{ article.title }}">
+<div class="container">
+    <div class="chronicles-header">
+        <img src="{% static 'images/logo.jpg' %}" alt="Chronicles">
+        <h2>Your Story, Our Chronicles</h2>
+    </div>
+
+    {% if messages %}
+    <div class="container mt-4">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            {% endif %}
-            <h2>{{ article.title }}</h2>
-            <p>{{ article.short_content }}</p> <!-- Truncated article content -->
-            <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Display all approved articles -->
+    <div class="article-list">
+        <div class="category-grid">
+            {% for article in all_articles %}
+                <div class="article-card">
+                    {% if article.image %}
+                    <div class="article-image">
+                        <img src="{{ article.image.url }}" alt="{{ article.title }}">
+                    </div>
+                    {% else %}
+                    <div class="article-image">
+                        <img src="{% static 'images/placeholder.jpg' %}" alt="No image available">
+                    </div>
+                    {% endif %}
+                    <div class="article-description">
+                        <h3>{{ article.title }}</h3>
+                        <p>{{ article.content|truncatewords:20 }}</p>
+                        <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
+    </div>
 </div>
+<script src="{% static 'articles/scripts.js' %}"></script>
 {% endblock %}

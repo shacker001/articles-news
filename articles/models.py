@@ -12,8 +12,8 @@ class Article(models.Model):
 
     title = models.CharField(max_length=200)
     content = models.TextField()
-    image = models.ImageField(upload_to='article_images/', null=True, blank=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='article_images/', blank=True, null=True)
+    # author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -33,4 +33,15 @@ class Article(models.Model):
         return self.title
 
     def short_content(self):
-        return self.content[:150] + "..." if len(self.content) > 150 else self.content #Method to reurn truncated contet
+        return self.content[:150] + "..." if len(self.content) > 150 else self.content
+
+
+#=========== E-Paper Models ========
+
+class ePaper(models.Model):
+    title = models.CharField(max_length=255)
+    pdf_file = models.FileField(upload_to='epapers/')
+    upload_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

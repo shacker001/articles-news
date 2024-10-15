@@ -1,16 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<article>
+<div class="container article-detail">
+    {% if article.image %}
+        <img src="{{ article.image.url }}" alt="{{ article.title }}">
+    {% endif %}
     <h1>{{ article.title }}</h1>
     <p>{{ article.content }}</p>
-    <p>Published on: {{ article.created_at }}</p>
-    <p>By: {{ article.author.username }}</p>
-</article>
-<a href="{% url 'index' %}">Back to Articles</a>
-
-{% if article.image %}
-<img src="{{ article.image.url }}" alt="{{ article.title }}">
-{% endif %}
-
+</div>
 {% endblock %}

@@ -10,4 +10,6 @@ urlpatterns = [
     path('submit/', views.submit_article, name='submit_article'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
     path('article/<int:article_id>/', views.article_detail, name='article_detail'),
+    path('category/<str:category>/', views.category_view, name='category_view'),
+    path('epapers/', views.epaper_view, name='epaper_view'),
 ]
