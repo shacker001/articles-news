@@ -1,16 +1,18 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Chronicles{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'articles/styles.css' %}">
 </head>
+
 <body>
     <header>
         <div class="logo">
-            <img src="{% static 'images/chronicles.jpg' %}" alt="Chronicles Logo">
+            <img src="{% static 'images/logo.jpg' %}" alt="Chronicles Logo">
         </div>
         <nav>
             <ul>
@@ -19,13 +21,14 @@
                 <li><a href="{% url 'category_view' 'features' %}">Features</a></li>
                 <li><a href="{% url 'category_view' 'opinion' %}">Opinion</a></li>
                 <li><a href="{% url 'category_view' 'creative' %}">Creative Writing</a></li>
+                <li><a href="{% url 'epaper_view' %}">ePaper</a></li>
                 <li><a href="{% url 'submit_article' %}">Submit Article</a></li>
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                    <li><a href="#">{{ user.username }}</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="#">{{ user.username }}</a></li>
                 {% else %}
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                    <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
                 {% endif %}
             </ul>
         </nav>
@@ -40,12 +43,13 @@
         <p>&copy; 2024 Chronicles. All Rights Reserved.</p>
         <p>Contacts: E-mail chronicles@gmail.com | Call +254 1********4</p>
         <div class="social-links">
-            <a href="#">Facebook</a> | 
-            <a href="#">Twitter</a> | 
-            <a href="#">Instagram</a>
+            <a href="#"><img src="{% static 'images/facebook-icon.jpeg' %}" alt="Facebook"></a>
+            <a href="#"><img src="{% static 'images/twitter-icon.png' %}" alt="Twitter"></a>
+            <a href="#"><img src="{% static 'images/instagram-icon.jpeg' %}" alt="Instagram"></a>
         </div>
     </footer>
 
     <script src="{% static 'articles/scripts.js' %}"></script>
 </body>
+
 </html>

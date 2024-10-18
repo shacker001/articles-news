@@ -11,7 +11,7 @@ body {
 /* Header Styles */
 header {
     text-align: center;
-    background-color: white;
+    background-color: black;
     padding: 20px 0;
 }
 
@@ -100,7 +100,8 @@ h2 {
 /* Grid container for categories */
 
 .category-grid {
-    display: grid;
+    display: contents;
+    /* display: grid; */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     margin-top: 20px;
@@ -231,7 +232,13 @@ footer p {
     transition: opacity 0.5s ease-out, visibility 0s 0.5s;
 }
 
-
+.social-links a img{
+    text-align: center;
+    justify-content: space-evenly;
+    width: 30px;
+    height: auto;
+    border-radius: 7px;
+}
 
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
