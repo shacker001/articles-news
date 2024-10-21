@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="chronicles-header">
+    <img src="{% static 'images/logo.jpg' %}" alt="Chronicles Icon">
+    <h2>Welcome to Chronicles</h2>
+</div>
+
+<div class="article-section">
+    <h3>Latest News Articles</h3>
+    <div class="article-list">
+        {% for article in news_articles %}
+        <div class="article-card">
+            {% if article.image %}
+            <img src="{{ article.image.url }}" alt="Article Image">
+            {% endif %}
+            <div class="article-description">
+                <h4>{{ article.title }}</h4>
+                <p>{{ article.summary }}</p>
+                <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="article-section">
+    <h3>Creative Articles</h3>
+    <div class="article-list">
+        {% for article in creative_articles %}
+        <div class="article-card">
+            {% if article.image %}
+            <img src="{{ article.image.url }}" alt="Article Image">
+            {% endif %}
+            <div class="article-description">
+                <h4>{{ article.title }}</h4>
+                <p>{{ article.summary }}</p>
+                <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="article-section">
+    <h3>Features Articles</h3>
+    <div class="article-list">
+        {% for article in features_articles %}
+        <div class="article-card">
+            {% if article.image %}
+            <img src="{{ article.image.url }}" alt="Article Image">
+            {% endif %}
+            <div class="article-description">
+                <h4>{{ article.title }}</h4>
+                <p>{{ article.summary }}</p>
+                <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="article-section">
+    <h3>Opinion Articles</h3>
+    <div class="article-list">
+        {% for article in opinion_articles %}
+        <div class="article-card">
+            {% if article.image %}
+            <img src="{{ article.image.url }}" alt="Article Image">
+            {% endif %}
+            <div class="article-description">
+                <h4>{{ article.title }}</h4>
+                <p>{{ article.summary }}</p>
+                <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

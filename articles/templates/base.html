@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronicles</title>
+    <link rel="stylesheet" href="{% static 'articles/styles.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="{% static 'images/logo.jpg' %}" alt="Chronicles Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'category_view' 'news' %}">News</a></li>
+                <li><a href="{% url 'category_view' 'features' %}">Features</a></li>
+                <li><a href="{% url 'category_view' 'opinion' %}">Opinion</a></li>
+                <li><a href="{% url 'category_view' 'creative' %}">Creative Writing</a></li>
+                <li><a href="{% url 'epaper_view' %}">ePaper</a></li>
+                <li><a href="{% url 'submit_article' %}">Submit Article</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="#">{{ user.username }}</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Chronicles. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><img src="{% static 'images/facebook_icon.png' %}" alt="Facebook"></a>
+            <a href="#"><img src="{% static 'images/twitter_icon.png' %}" alt="Twitter"></a>
+            <a href="#"><img src="{% static 'images/instagram_icon.png' %}" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script src="{% static 'articles/scripts.js' %}"></script>
+</body>
+
+</html>

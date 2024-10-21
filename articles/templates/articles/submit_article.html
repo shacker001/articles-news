@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .article-submit-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.article-submit-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.article-submit-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1em;
+    color: #555;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.submit-button {
+    padding: 10px;
+    font-size: 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    font-size: 0.85em;
+    margin-top: 5px;
+}
+
+</style>
+<div class="article-submit-container">
+    <h2 class="article-submit-title">Submit Your Article</h2>
+    <form method="POST" enctype="multipart/form-data" class="article-submit-form">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.title.label }}
+            {{ form.title }}
+            {% if form.title.errors %}
+            <div class="error">{{ form.title.errors }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.content.label }}
+            {{ form.content }}
+            {% if form.content.errors %}
+            <div class="error">{{ form.content.errors }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.category.label }}
+            {{ form.category }}
+            {% if form.category.errors %}
+            <div class="error">{{ form.category.errors }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.image.label }}
+            {{ form.image }}
+            {% if form.image.errors %}
+            <div class="error">{{ form.image.errors }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</div>
+{% endblock %}
