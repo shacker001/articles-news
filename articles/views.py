@@ -41,17 +41,17 @@ def submit_article(request):
 
 def index(request):
     approved_articles = Article.objects.filter(approved=True)
-    # news_articles = Article.objects.filter(category='news', approved=True)
-    # creative_articles = Article.objects.filter(category='creative', approved=True)
-    # features_articles = Article.objects.filter(category='features', approved=True)
-    # opinion_articles = Article.objects.filter(category='opinion', approved=True)
+    news_articles = Article.objects.filter(category='news', approved=True)
+    creative_articles = Article.objects.filter(category='creative', approved=True)
+    features_articles = Article.objects.filter(category='features', approved=True)
+    opinion_articles = Article.objects.filter(category='opinion', approved=True)
 
     context = {
-        # 'news_articles': news_articles,
-        # 'creative_articles': creative_articles,
-        # 'features_articles': features_articles,
-        # 'opinion_articles': opinion_articles,
-        'approved_articles' : approved_articles,
+        'news_articles': news_articles,
+        'creative_articles': creative_articles,
+        'features_articles': features_articles,
+        'opinion_articles': opinion_articles,
+        'approved_articles': approved_articles,
     }
     return render(request, 'articles/index.html', context)
 
