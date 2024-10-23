@@ -84,7 +84,7 @@
                 <span class="article-category">{{ article.get_category_display }}</span> |
                 <span class="article-date">{{ article.created_at|date:"F j, Y" }}</span>
                 <!-- Uncomment if author is added to the model -->
-                <span class="article-author">By {{ article.author.get_full_name }}</span>
+                <span class="article-author">By {{ article.author }}</span>
             </div>
         </div>
     </div>

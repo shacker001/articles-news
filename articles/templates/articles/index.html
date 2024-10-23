@@ -3,7 +3,7 @@
 {% block content %}
 <div class="chronicles-header">
     <img src="{% static 'images/logo.jpg' %}" alt="Chronicles Icon">
-    <h2>Welcome to Chronicles</h2>
+    <h1>Submit&#9733;</span> &nbsp;&nbsp;<span>Share&#9733;&nbsp;&nbsp;</span>Inspire</h1>
 </div>
 
 <div class="article-section">
@@ -16,8 +16,7 @@
             {% endif %}
             <div class="article-description">
                 <h4>{{ article.title }}</h4>
-                <p>{{ article.summary }}</p>
-                <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
+                <p>{{ article.content|truncatewords:20 }}</p> <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
             </div>
         </div>
         {% endfor %}
@@ -34,8 +33,7 @@
             {% endif %}
             <div class="article-description">
                 <h4>{{ article.title }}</h4>
-                <p>{{ article.summary }}</p>
-                <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
+                <p>{{ article.content|truncatewords:20 }}</p> <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
             </div>
         </div>
         {% endfor %}
@@ -52,8 +50,7 @@
             {% endif %}
             <div class="article-description">
                 <h4>{{ article.title }}</h4>
-                <p>{{ article.summary }}</p>
-                <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
+                <p>{{ article.content|truncatewords:20 }}</p> <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
             </div>
         </div>
         {% endfor %}
@@ -70,8 +67,7 @@
             {% endif %}
             <div class="article-description">
                 <h4>{{ article.title }}</h4>
-                <p>{{ article.summary }}</p>
-                <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
+                 <p>{{ article.content|truncatewords:20 }}</p><a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
             </div>
         </div>
         {% endfor %}

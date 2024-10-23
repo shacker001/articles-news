@@ -60,7 +60,7 @@ def article_detail(request, article_id):
     return render(request, 'articles/article_detail.html', {'article':article})
 
 def category_view(request, category):
-    articles = Article.objects.filter(category=category)
+    articles = Article.objects.filter(category=category, approved=True)
     return render(request, 'articles/category.html', {'articles':articles})
 
 def epaper_view(request):

@@ -5,32 +5,48 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Century Schoolbook', serif;
     background-color: #f9f9f9;
     color: #333;
 }
 
 header {
-    background-color: #7b4513;
+    background-color: white;
     padding: 10px;
-    text-align: center;
-    color: #fff;
+    /* color: #fff; */
 }
 
 header .logo img {
-    width: 150px;
-    height: auto;
+    margin-left: 17%;
+    width:300px;
+    height: 100px;
+}
+
+header .logo h1 {
+    color: #7b4513;
+    font-size: 2.5em;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+header .logo h1 span{
+    color: #f8bc27;
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
-    margin: 10px 0;
+    background-color: #7b4513;
+    width: 100%;
+    height: 80px;
+    margin-top: 20px;
 }
 
 nav ul li {
     margin: 0 15px;
+    margin-top: 30px;
 }
 
 nav ul li a {
@@ -38,6 +54,7 @@ nav ul li a {
     color: #fff;
     font-weight: bold;
     padding: 5px 10px;
+    margin-top: 20%;
     background-color: #b1630a;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -46,6 +63,53 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #7b4513;
 }
+
+
+/* Custom message styling */
+/* Alert and Fading Effects */
+.alert {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.5s ease-out; 
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.alert-error, .alert-danger {
+    color: #f44336;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0s 0.5s;
+}
+
+
+/* CONTAINER */
 
 .container {
     max-width: 1200px;
@@ -61,15 +125,22 @@ nav ul li a:hover {
     border-radius: 10px;
 }
 
+.chronicles-header h1 {
+    color: #7b4513;
+    font-size: 2.5em;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.chronicles-header h1 span{
+    color: #F9E87B;
+}
+
 .chronicles-header img {
     width: 150px;
     height: auto;
-}
-
-.chronicles-header h2 {
-    color: #7b4513;
-    font-size: 1.8rem;
-    margin-top: 15px;
+    border-radius: 10px;
 }
 
 .article-section {
