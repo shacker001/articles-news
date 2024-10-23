@@ -3,6 +3,7 @@
 {% block title %}Register - Chronicles{% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
     <h1>Create an Account</h1>
     <form method="POST">
         {% csrf_token %}
@@ -11,3 +12,116 @@
     </form>
     <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
 {% endblock %}
+=======
+<style>
+    .register-container {
+        max-width: 400px;
+        margin: 100px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .register-title {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .register-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 1em;
+        color: #555;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color 0.3s;
+    }
+
+    .form-input:focus {
+        border-color: #007BFF;
+        outline: none;
+    }
+
+    .register-button {
+        padding: 10px;
+        font-size: 1em;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .register-button:hover {
+        background-color: #0056b3;
+    }
+
+    .error {
+        color: red;
+        font-size: 0.85em;
+        margin-top: 5px;
+    }
+
+    .login-prompt {
+        text-align: center;
+        margin-top: 15px;
+        color: #666;
+    }
+
+    .login-link {
+        color: #007BFF;
+        text-decoration: none;
+    }
+
+    .login-link:hover {
+        text-decoration: underline;
+    }
+</style>
+<div class="register-container">
+    <h1 class="register-title">Create an Account</h1>
+    <form method="POST" class="register-form">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+            {% if form.username.errors %}
+            <div class="error">{{ form.username.errors }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.password1.label_tag }}
+            {{ form.password1 }}
+            {% if form.password1.errors %}
+            <div class="error">{{ form.password1.errors }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.password2.label_tag }}
+            {{ form.password2 }}
+            {% if form.password2.errors %}
+            <div class="error">{{ form.password2.errors }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" class="register-button">Register</button>
+    </form>
+    <p class="login-prompt">Already have an account? <a href="{% url 'login' %}" class="login-link">Login here</a>.</p>
+</div>
+{% endblock %}
+>>>>>>> kim

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* General Styles */
 body {
     font-family: 'Century Schoolbook', serif;
@@ -226,12 +227,119 @@ footer p {
     background-color: #f44336;
 }
 
+=======
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Century Schoolbook', serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: white;
+    padding: 10px;
+    /* color: #fff; */
+}
+
+header .logo img {
+    margin-left: 17%;
+    width:300px;
+    height: 100px;
+}
+
+header .logo h1 {
+    color: #7b4513;
+    font-size: 2.5em;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+header .logo h1 span{
+    color: #f8bc27;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background-color: #7b4513;
+    width: 100%;
+    height: 80px;
+    margin-top: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+    margin-top: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin-top: 20%;
+    background-color: #b1630a;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #7b4513;
+}
+
+
+/* Custom message styling */
+/* Alert and Fading Effects */
+.alert {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.5s ease-out; 
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.alert-error, .alert-danger {
+    color: #f44336;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+
+>>>>>>> kim
 .fade-out {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease-out, visibility 0s 0.5s;
 }
 
+<<<<<<< HEAD
 .social-links a img{
     text-align: center;
     justify-content: space-evenly;
@@ -278,3 +386,162 @@ footer p {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
+=======
+
+/* CONTAINER */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.chronicles-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f8bc27;
+    border-radius: 10px;
+}
+
+.chronicles-header h1 {
+    color: #7b4513;
+    font-size: 2.5em;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.chronicles-header h1 span{
+    color: #F9E87B;
+}
+
+.chronicles-header img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.article-section {
+    margin-bottom: 40px;
+}
+
+.article-section h3 {
+    color: #7b4513;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.article-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.article-card {
+    background-color: #fff;
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.article-description {
+    padding: 10px 0;
+}
+
+.article-description h4 {
+    font-size: 1.4rem;
+    color: #7b4513;
+    margin-bottom: 10px;
+}
+
+.article-description p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: #b1630a;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #7b4513;
+}
+
+footer {
+    background-color: #f8bc27;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin-bottom: 10px;
+    color: #7b4513;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-links img {
+    width: 30px;
+    height: auto;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article-card {
+        width: 48%;
+    }
+
+    .chronicles-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .article-card {
+        width: 100%;
+    }
+
+    .chronicles-header img {
+        width: 120px;
+    }
+
+    .chronicles-header h2 {
+        font-size: 1.2rem;
+    }
+}
+>>>>>>> kim

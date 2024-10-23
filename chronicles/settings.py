@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 Django settings for chronicles project.
 
@@ -10,6 +11,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+=======
+>>>>>>> kim
 from pathlib import Path
 import os
 
@@ -119,9 +122,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+<<<<<<< HEAD
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     # os.path.join(BASE_DIR, 'articles/static'),
+=======
+STATIC_URL = 'static/'
+STATICFILES_DIR = [
+>>>>>>> kim
     BASE_DIR / 'static',
 ]
 

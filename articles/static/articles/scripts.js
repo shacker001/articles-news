@@ -12,5 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
         alerts.forEach(function (alert) {
             alert.classList.add('fade-out');
         });
+<<<<<<< HEAD
     }, 5000); // 5 seconds before fade out
+=======
+    }, 7000); // 10 seconds before fade out
+>>>>>>> kim
 });
