@@ -1,20 +1,15 @@
-function toggleMenu() {
-    // console.log("Hamburger clicked!");
-    var navLinks = document.getElementById("navLinks");
-    navLinks.classList.toggle("show");
-}
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    // Set timeout to fade out alert after 5 seconds
+    // Set timeout to fade out alert after 7 seconds
     setTimeout(function () {
         let alerts = document.querySelectorAll('.alert');
         alerts.forEach(function (alert) {
             alert.classList.add('fade-out');
         });
-<<<<<<< HEAD
-    }, 5000); // 5 seconds before fade out
-=======
-    }, 7000); // 10 seconds before fade out
->>>>>>> kim
+    }, 7000); // 7 seconds before fade out
+
+    // Hamburger menu toggle
+    window.toggleMenu = function () {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('show');
+    };
 });

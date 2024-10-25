@@ -4,32 +4,29 @@
 
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Chronicles{% endblock %}</title>
-=======
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/icon" href="{% static 'images/favicon.jpg}%"/>
     <title>Chronicles</title>
->>>>>>> kim
     <link rel="stylesheet" href="{% static 'articles/styles.css' %}">
 </head>
 
 <body>
-<<<<<<< HEAD
-    <header>
-        <div class="logo">
-            <img src="{% static 'images/logo.jpg' %}" alt="Chronicles Logo">
-=======
 
     <header>
         <div class="logo">
             <img src="{% static 'images/chronicles.jpg' %}" alt="Chronicles Logo">
             <h1>Your Story <span>Our Chronicles</span></h1>
->>>>>>> kim
         </div>
-        <nav>
+
+         <!-- Hamburger button -->
+         <div id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="navbar">
             <ul>
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'category_view' 'news' %}">News</a></li>
@@ -48,21 +45,6 @@
             </ul>
         </nav>
     </header>
-<<<<<<< HEAD
-
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Chronicles. All Rights Reserved.</p>
-        <p>Contacts: E-mail chronicles@gmail.com | Call +254 1********4</p>
-        <div class="social-links">
-            <a href="#"><img src="{% static 'images/facebook-icon.jpeg' %}" alt="Facebook"></a>
-            <a href="#"><img src="{% static 'images/twitter-icon.png' %}" alt="Twitter"></a>
-            <a href="#"><img src="{% static 'images/instagram-icon.jpeg' %}" alt="Instagram"></a>
-=======
     {% if messages %}
     <div class="messages">
         {% for message in messages %}
@@ -80,13 +62,14 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Chronicles. All rights reserved.</p>
+        <p>Send us your articles through <a href="mailto:chronicles.ys.oc@gmail.com?subject=Contact%20us%20Query">chronicles.ys.oc@gmail.com</a></p>
+        <br>
         <div class="social-links">
-            <a href="#"><img src="{% static 'images/facebook_icon.png' %}" alt="Facebook"></a>
-            <a href="#"><img src="{% static 'images/twitter_icon.png' %}" alt="Twitter"></a>
-            <a href="#"><img src="{% static 'images/instagram_icon.png' %}" alt="Instagram"></a>
->>>>>>> kim
+            <a href="https://www.facebook.com/profile.php?id=61565138189624"><img src="{% static 'images/facebook-icon.jpeg' %}" alt="Facebook"></a>
+            <a href="https://x.com/chronicles_oc?t=4fJV_uaaSI2bc82ke11PJw&s=08"><img src="{% static 'images/twiter-icon.jpeg' %}" alt="Twitter"></a>
         </div>
+        <br>
+        <p>&copy; 2024 Chronicles. All rights reserved.</p>
     </footer>
 
     <script src="{% static 'articles/scripts.js' %}"></script>

@@ -1,14 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<<<<<<< HEAD
-<div class="container">
-    <h2>Submit Your Article</h2>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-=======
 
 <style>
     .article-submit-container {
@@ -110,7 +102,6 @@ label {
             {% endif %}
         </div>
         <button type="submit" class="submit-button">Submit</button>
->>>>>>> kim
     </form>
 </div>
 {% endblock %}

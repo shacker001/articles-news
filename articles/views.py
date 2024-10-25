@@ -40,46 +40,27 @@ def submit_article(request):
     return render(request, 'articles/submit_article.html', {'form': form})
 
 def index(request):
-<<<<<<< HEAD
-    approved_articles = Article.objects.filter(approved=True)
-    news_articles = Article.objects.filter(category='news', approved=True)
-    creative_articles = Article.objects.filter(category='creative', approved=True)
-    features_articles = Article.objects.filter(category='features', approved=True)
-    opinion_articles = Article.objects.filter(category='opinion', approved=True)
-=======
     # Fetch the latest 3 approved articles for each category
     news_articles = Article.objects.filter(category='news', approved=True).order_by('-created_at')[:3]
     creative_articles = Article.objects.filter(category='creative', approved=True).order_by('-created_at')[:3]
     features_articles = Article.objects.filter(category='features', approved=True).order_by('-created_at')[:3]
     opinion_articles = Article.objects.filter(category='opinion', approved=True).order_by('-created_at')[:3]
->>>>>>> kim
 
     context = {
         'news_articles': news_articles,
         'creative_articles': creative_articles,
         'features_articles': features_articles,
         'opinion_articles': opinion_articles,
-<<<<<<< HEAD
-        'approved_articles': approved_articles,
-    }
-    return render(request, 'articles/index.html', context)
-
-=======
     }
     return render(request, 'articles/index.html', context)
 
 
->>>>>>> kim
 def article_detail(request, article_id):
     article = get_object_or_404(Article, id=article_id)
     return render(request, 'articles/article_detail.html', {'article':article})
 
 def category_view(request, category):
-<<<<<<< HEAD
-    articles = Article.objects.filter(category=category)
-=======
     articles = Article.objects.filter(category=category, approved=True)
->>>>>>> kim
     return render(request, 'articles/category.html', {'articles':articles})
 
 def epaper_view(request):
