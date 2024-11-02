@@ -1,22 +1,22 @@
 {
-    "version": 2,
-    "builds": [
+  "builds": [{
+      "src": "chronicles/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.10" }
+  },
+  {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "staticfiles_build" }
+  }],
+  "routes": [
       {
-        "src": "articles/wsgi.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
+          "src": "/static/(.*)",
+          "dest": "/static/$1"
+      },
       {
-        "src": "/(.*)",
-        "dest": "articles/wsgi.py"
+          "src": "/(.*)",
+          "dest": "chronicles/wsgi.py"
       }
-    ],
-    "env": {
-      "DJANGO_SETTINGS_MODULE": "articles.settings",
-      "SECRET_KEY": "@your-secret-key",
-      "ALLOWED_HOSTS": ".vercel.app",
-      "DEBUG": "false"
-    }
-  }
-  
+  ]
+}

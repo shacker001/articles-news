@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 class Article(models.Model):
     CATEGORY_CHOICES = [
@@ -9,11 +10,11 @@ class Article(models.Model):
         ('opinion', 'Opinion'),
         ('creative', 'Creative'),
     ]
-
+    
+    # author = models.ForeignKey(User, on_delete=models.CASCADE, default='Unknown')
     title = models.CharField(max_length=200)
     content = models.TextField()
-    image = models.ImageField(upload_to='article_images/', blank=True, null=True)
-    # author = models.ForeignKey(User, on_delete=models.CASCADE, default='Unknown')
+    image = CloudinaryField('image', blank=True, null=True)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -40,7 +41,7 @@ class Article(models.Model):
 
 class ePaper(models.Model):
     title = models.CharField(max_length=255)
-    pdf_file = models.FileField(upload_to='epapers/')
+    pdf_file = CloudinaryField('PDF', resource_type='raw')
     upload_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
