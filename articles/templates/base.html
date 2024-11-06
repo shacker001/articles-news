@@ -9,42 +9,44 @@
     <link rel="shortcut icon" type="image/icon" href="{% static 'images/favico.jpg' %}"/>
     <title>Chronicles</title>
     <link rel="stylesheet" href="{% static 'articles/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'articles/hamburger.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'articles/responsive.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'articles/bootstrap.min.css' %}"> -->
 </head>
 
 <body>
+<header>
+    <div class="logo">
+        <img src="{% static 'images/chronicles.jpg' %}" alt="Chronicles Logo">
+        <h1>Your Story <span>Our Chronicles</span></h1>
+    </div>
 
-    <header>
-        <div class="logo">
-            <img src="{% static 'images/chronicles.jpg' %}" alt="Chronicles Logo">
-            <h1>Your Story <span>Our Chronicles</span></h1>
-        </div>
+     <!-- Hamburger button -->
+     <div id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-         <!-- Hamburger button -->
-         <div id="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <nav id="navbar">
-            <ul>
-                <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'category_view' 'news' %}">News</a></li>
-                <li><a href="{% url 'category_view' 'features' %}">Features</a></li>
-                <li><a href="{% url 'category_view' 'opinion' %}">Opinion</a></li>
-                <li><a href="{% url 'category_view' 'creative' %}">Creative Writing</a></li>
-                <li><a href="{% url 'epaper_view' %}">ePaper</a></li>
-                <li><a href="{% url 'submit_article' %}">Submit Article</a></li>
-                {% if user.is_authenticated %}
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-                <li><a href="#">{{ user.username }}</a></li>
-                {% else %}
-                <li><a href="{% url 'login' %}">Login</a></li>
-                <li><a href="{% url 'register' %}">Register</a></li>
-                {% endif %}
-            </ul>
-        </nav>
-    </header>
+    <nav id="navbar">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'category_view' 'news' %}">News</a></li>
+            <li><a href="{% url 'category_view' 'features' %}">Features</a></li>
+            <li><a href="{% url 'category_view' 'opinion' %}">Opinion</a></li>
+            <li><a href="{% url 'category_view' 'creative' %}">Creative Writing</a></li>
+            <li><a href="{% url 'epaper_view' %}">ePaper</a></li>
+            <li><a href="{% url 'submit_article' %}">Submit Article</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="#">{{ user.username }}</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
     {% if messages %}
     <div class="messages">
         {% for message in messages %}
@@ -62,17 +64,22 @@
     </div>
 
     <footer>
-        <p>Send us your articles through <a href="mailto:chronicles.ys.oc@gmail.com?subject=Contact%20us%20Query">chronicles.ys.oc@gmail.com</a></p>
-        <br>
+        <p>Send us your articles through | <a href="mailto:chronicles.ys.oc@gmail.com?subject=Contact%20us%20Query" aria-label="Email us at chronicles.ys.oc@gmail.com">chronicles.ys.oc@gmail.com</a></p>
+        
         <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61565138189624"><img src="{% static 'images/facebook-icon.jpeg' %}" alt="Facebook"></a>
-            <a href="https://x.com/chronicles_oc?t=4fJV_uaaSI2bc82ke11PJw&s=08"><img src="{% static 'images/twiter-icon.jpeg' %}" alt="Twitter"></a>
+            <a href="https://www.facebook.com/profile.php?id=61565138189624" aria-label="Visit our Facebook page">
+                <img src="{% static 'images/facebook-icon.jpeg' %}" alt="Facebook icon">
+            </a>
+            <a href="https://x.com/chronicles_oc?t=4fJV_uaaSI2bc82ke11PJw&s=08" aria-label="Visit our Twitter profile">
+                <img src="{% static 'images/twiter-icon.jpeg' %}" alt="Twitter icon">
+            </a>
         </div>
-        <br>
+        
         <p>&copy; 2024 Chronicles. All rights reserved.</p>
-        <p>Developed by <span><a href="https://shacker001.github.io/Sh4cker/">| Sh4cker</a></span></p>
+        <p>Developed by | <span><a href="https://shacker001.github.io/Sh4cker/" aria-label="Visit developer's portfolio">Sh4cker</a></span></p>
     </footer>
-
+    
+    
     <script src="{% static 'articles/scripts.js' %}"></script>
 </body>
 
