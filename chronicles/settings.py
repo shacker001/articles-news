@@ -148,24 +148,32 @@ else:
 
  # Error Logging Configuration   
 
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
-        'file': {
+        'console': {
             'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'error.log'),
+            'class': 'logging.StreamHandler',
         },
     },
     'loggers': {
         'django': {
-            'handlers': ['file'],
+            'handlers': ['console'],
             'level': 'ERROR',
             'propagate': True,
         },
     },
 }
+
+if DEBUG:  # File logging for development only
+    LOGGING['handlers']['file'] = {
+        'level': 'ERROR',
+        'class': 'logging.FileHandler',
+        'filename': os.path.join(BASE_DIR, 'error.log'),
+    }
+    LOGGING['loggers']['django']['handlers'].append('file')
 
 
 
