@@ -46,18 +46,3 @@ class ePaper(models.Model):
 
     def __str__(self):
         return self.title
-
-# ============AUTHOR MODELS===========
-
-# class Author(models.Model):
-#     first_name = models.CharField(max_length=12)
-#     last_name = models.CharField(max_length=12)
-#     password1 = models.CharField(max_length=30)
-#     password2 = models.CharField(max_length=30)
-
-#     class Meta:
-#         verbose_name_plural = 'Author'
-
-
-#     def __str__(self):
-#         return f"{self.username}"
