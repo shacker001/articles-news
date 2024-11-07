@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-%ghr**@vjn&&*wnij!vv^$7k7)o$h3*q=m9=q6rm*oas1lr9$c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['chronicles-pied.vercel.app', '127.0.0.1']
 
 
 # Application definition
@@ -123,7 +123,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIR = os.path.join(BASE_DIR, 'articles/static')
+# STATICFILES_DIR = os.path.join(BASE_DIR, 'articles/static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'articles/static')]
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
@@ -143,6 +145,28 @@ else:
     }
 
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+ # Error Logging Configuration   
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'error.log'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
+
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
