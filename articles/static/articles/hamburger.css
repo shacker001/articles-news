@@ -47,6 +47,7 @@ header .logo h1 span {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    text-transform: capitalize;
 }
 
 #navbar a:hover {

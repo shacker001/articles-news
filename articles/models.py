@@ -11,13 +11,13 @@ class Article(models.Model):
         ('creative', 'Creative'),
     ]
     
-    # author = models.ForeignKey(User, on_delete=models.CASCADE, default='Unknown')
     title = models.CharField(max_length=200)
     content = models.TextField()
     image = CloudinaryField('image', blank=True, null=True)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default='Unknown')
 
     def clean(self):
         word_count = len(self.content.split())
@@ -46,3 +46,18 @@ class ePaper(models.Model):
 
     def __str__(self):
         return self.title
+
+# ============AUTHOR MODELS===========
+
+# class Author(models.Model):
+#     first_name = models.CharField(max_length=12)
+#     last_name = models.CharField(max_length=12)
+#     password1 = models.CharField(max_length=30)
+#     password2 = models.CharField(max_length=30)
+
+#     class Meta:
+#         verbose_name_plural = 'Author'
+
+
+#     def __str__(self):
+#         return f"{self.username}"

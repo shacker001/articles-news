@@ -10,8 +10,6 @@
     <title>Chronicles</title>
     <link rel="stylesheet" href="{% static 'articles/styles.css' %}">
     <link rel="stylesheet" href="{% static 'articles/hamburger.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'articles/responsive.css' %}"> -->
-    <!-- <link rel="stylesheet" href="{% static 'articles/bootstrap.min.css' %}"> -->
 </head>
 
 <body>
@@ -35,7 +33,7 @@
             <li><a href="{% url 'category_view' 'features' %}">Features</a></li>
             <li><a href="{% url 'category_view' 'opinion' %}">Opinion</a></li>
             <li><a href="{% url 'category_view' 'creative' %}">Creative Writing</a></li>
-            <li><a href="{% url 'epaper_view' %}">ePaper</a></li>
+            <li><a href="{% url 'epaper_view' %}">e-Paper</a></li>
             <li><a href="{% url 'submit_article' %}">Submit Article</a></li>
             {% if user.is_authenticated %}
             <li><a href="{% url 'logout' %}">Logout</a></li>
