@@ -41,7 +41,7 @@ def submit_article(request):
 
 def index(request):
     # Fetch the latest 3 approved articles for each category
-    news_articles = Article.objects.filter(category='news', approved=True).order_by('-created_at', 'author')[:3]
+    news_articles = Article.objects.filter(category='news', approved=True).order_by('-created_at')[:3]
     creative_articles = Article.objects.filter(category='creative', approved=True).order_by('-created_at')[:3]
     features_articles = Article.objects.filter(category='features', approved=True).order_by('-created_at')[:3]
     opinion_articles = Article.objects.filter(category='opinion', approved=True).order_by('-created_at')[:3]
