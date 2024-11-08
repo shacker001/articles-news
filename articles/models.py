@@ -17,7 +17,7 @@ class Article(models.Model):
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, default='Unknown')
+    author = models.ForeignKey(User, on_delete=models.CASCADE)  # Article author
 
     def clean(self):
         word_count = len(self.content.split())
